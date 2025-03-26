@@ -123,18 +123,11 @@ export default function HeroSection() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-70"></div>
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-card shadow-xl overflow-hidden">
-                <svg
-                  className="absolute inset-0 w-full h-full text-muted"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+              <img 
+                src="../../../assets/img.jpg" 
+                alt="Your Name" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               </div>
               <motion.div 
                 className="absolute -bottom-5 -right-5 bg-card rounded-full p-4 shadow-lg"

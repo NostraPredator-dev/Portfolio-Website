@@ -62,7 +62,7 @@ export default function AboutSection() {
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Currently, I'm focusing on JavaScript and Python while expanding my skills through hands-on projects and competitive coding. I love solving complex problems and bringing creative ideas to life through code, constantly pushing myself to learn and improve.
               </p>
-              <a href="#" className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
+              <a href="../../../assets/resume.pdf" download="Hardik Resume.pdf" className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
                 Download Resume
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
