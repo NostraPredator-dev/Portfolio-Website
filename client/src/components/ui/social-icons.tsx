@@ -28,22 +28,13 @@ export default function SocialIcons({ className, iconClassName }: SocialIconsPro
         <i className="fab fa-linkedin text-xl"></i>
       </a>
       <a 
-        href={SOCIAL_LINKS.twitter}
+        href={SOCIAL_LINKS.instagram}
         target="_blank" 
         rel="noopener noreferrer" 
         className={iconClassName || "text-muted-foreground hover:text-primary transition-colors"}
-        aria-label="Twitter"
+        aria-label="Instagram"
       >
-        <i className="fab fa-twitter text-xl"></i>
-      </a>
-      <a 
-        href={SOCIAL_LINKS.dribbble}
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className={iconClassName || "text-muted-foreground hover:text-primary transition-colors"}
-        aria-label="Dribbble"
-      >
-        <i className="fab fa-dribbble text-xl"></i>
+        <i className="fab fa-instagram text-xl"></i>
       </a>
     </div>
   );

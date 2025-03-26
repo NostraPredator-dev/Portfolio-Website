@@ -32,7 +32,7 @@ export default function Footer() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
-              <span className="text-primary">John</span>Doe
+              <span className="text-primary">Hardik </span>Chudasama
             </a>
             <p className="text-sm text-muted-foreground mt-2">
               Creating digital experiences that matter.
@@ -90,14 +90,6 @@ export default function Footer() {
               Download Resume
             </a>
           </div>
-        </div>
-        
-        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} John Doe. All rights reserved.
-          </p>
-          
-          <SocialIcons className="mt-4 md:mt-0" />
         </div>
       </div>
     </footer>

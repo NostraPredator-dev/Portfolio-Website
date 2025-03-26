@@ -95,7 +95,7 @@ export default function SkillsSection() {
                   key={index}
                   name={skill.name}
                   percentage={skill.percentage}
-                  color="secondary"
+                  color="primary"
                   delay={index * 0.1}
                 />
               ))}
@@ -158,7 +158,7 @@ export default function SkillsSection() {
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
                   <div className="w-14 h-14 mb-3 flex items-center justify-center">
-                    <i className={`${skill.icon} text-3xl text-secondary`}></i>
+                    <i className={`${skill.icon} text-3xl text-primary`}></i>
                   </div>
                   <span className="text-sm font-medium text-center">{skill.name}</span>
                 </motion.div>

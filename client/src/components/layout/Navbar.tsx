@@ -57,7 +57,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center py-4">
           <a href="#hero" className="text-2xl font-bold font-heading">
-            <span className="text-primary">Nostra</span>Predator
+            <span className="text-primary">Hardik </span>Chudasama
           </a>
           
           <div className="hidden md:flex items-center space-x-8">

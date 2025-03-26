@@ -90,7 +90,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
                     <a href="mailto:contact.nostrapredator@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      contact.nostrapredator@example.com
+                      hcmcdc6038@gmail.com
                     </a>
                   </div>
                 </div>
@@ -102,7 +102,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
                     <a href="tel:+91XXXXXXXXXX" className="text-muted-foreground hover:text-primary transition-colors">
-                      +91 (XXX) XXX-XXXX
+                      +91 82109 14903
                     </a>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-medium mb-1">Location</h4>
                     <p className="text-muted-foreground">
-                      India
+                      Bhubaneshwar, Odisha, India
                     </p>
                   </div>
                 </div>
@@ -124,10 +124,9 @@ export default function ContactSection() {
                     <i className="fas fa-clock text-primary"></i>
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Working Hours</h4>
+                    <h4 className="font-medium mb-1">Working</h4>
                     <p className="text-muted-foreground">
-                      Monday - Friday: 9am - 6pm<br />
-                      Weekend: Available for urgent matters
+                      Open to Work
                     </p>
                   </div>
                 </div>
@@ -160,7 +159,7 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Your Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} />
+                            <Input placeholder="Full Name" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -174,7 +173,7 @@ export default function ContactSection() {
                         <FormItem>
                           <FormLabel>Your Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="johndoe@example.com" {...field} />
+                            <Input placeholder="@gmail.com" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
