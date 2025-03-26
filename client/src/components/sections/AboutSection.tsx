@@ -2,56 +2,50 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/section-heading";
 import { Timeline, TimelineItem } from "@/components/ui/skill-bar";
 
-const experiences = [
+const projects = [
   {
-    title: "Senior Frontend Developer",
-    company: "TechCorp Inc",
-    period: "2020 - Present",
+    title: "Game Development",
+    description: "Self-directed learning and projects",
+    period: "2022 - Present",
     current: true
   },
   {
-    title: "Web Developer",
-    company: "Digital Agency",
-    period: "2018 - 2020",
-    current: false
-  },
-  {
-    title: "Junior Developer",
-    company: "StartUp Vision",
-    period: "2016 - 2018",
-    current: false
+    title: "Web Development",
+    description: "Building interactive web applications",
+    period: "2021 - Present",
+    current: true
   }
 ];
 
 const education = [
   {
-    title: "Master's in Computer Science",
-    institution: "Tech University",
-    period: "2014 - 2016",
-    current: false
+    title: "Computer Science",
+    institution: "Self-study & Online Learning",
+    period: "2021 - Present",
+    current: true
   },
   {
-    title: "Bachelor's in Software Engineering",
-    institution: "State University",
-    period: "2010 - 2014",
+    title: "Programming Bootcamp",
+    institution: "Online Platform",
+    period: "2021",
     current: false
   }
 ];
 
 const interests = [
+  "Game Development",
   "Web Development",
+  "JavaScript",
+  "Python",
   "UI/UX Design",
-  "Mobile Apps",
-  "AI & Machine Learning",
-  "IoT",
-  "Blockchain"
+  "Problem Solving"
 ];
 
-const services = [
+const offerings = [
+  "Game Development",
   "Web Application Development",
-  "Responsive UI/UX Design",
-  "Performance Optimization",
-  "API Development & Integration"
+  "Responsive UI Design",
+  "JavaScript Programming"
 ];
 
 export default function AboutSection() {
@@ -63,10 +57,10 @@ export default function AboutSection() {
             <div className="sticky top-32">
               <SectionHeading title="About" highlight="Me" alignment="left" />
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                I'm a creative developer with over 5 years of experience building exceptional digital experiences that combine innovative design with solid engineering principles.
+                I'm a passionate self-taught developer with a strong interest in game development and web technologies. I enjoy creating interactive experiences that are both fun and functional.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                My approach centers on creating solutions that are not only visually appealing but also accessible, performant, and user-focused. I believe in continuous learning and staying at the forefront of technology trends.
+                Currently focusing on JavaScript and Python programming, I'm dedicated to expanding my skills through hands-on projects and continuous learning. I love solving problems and bringing creative ideas to life through code.
               </p>
               <a href="#" className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
                 Download Resume
@@ -79,7 +73,7 @@ export default function AboutSection() {
           
           <div className="w-full md:w-3/5">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Experience Card */}
+              {/* Projects Card */}
               <motion.div 
                 className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
@@ -88,13 +82,13 @@ export default function AboutSection() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i className="fas fa-briefcase text-primary text-xl"></i>
+                  <i className="fas fa-code-branch text-primary text-xl"></i>
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2">Experience</h3>
+                <h3 className="text-xl font-bold font-heading mb-2">Projects Focus</h3>
                 <div className="space-y-4 mt-4">
-                  {experiences.map((exp, index) => (
-                    <Timeline key={index} active={exp.current}>
-                      <TimelineItem title={exp.title} subtitle={exp.company} meta={exp.period} />
+                  {projects.map((project, index) => (
+                    <Timeline key={index} active={project.current}>
+                      <TimelineItem title={project.title} subtitle={project.description} meta={project.period} />
                     </Timeline>
                   ))}
                 </div>
@@ -142,7 +136,7 @@ export default function AboutSection() {
                 </div>
               </motion.div>
               
-              {/* Services Card */}
+              {/* Offerings Card */}
               <motion.div 
                 className="bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow"
                 initial={{ opacity: 0, y: 20 }}
@@ -153,14 +147,14 @@ export default function AboutSection() {
                 <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                   <i className="fas fa-cog text-secondary text-xl"></i>
                 </div>
-                <h3 className="text-xl font-bold font-heading mb-2">Services</h3>
+                <h3 className="text-xl font-bold font-heading mb-2">Skills Focus</h3>
                 <ul className="space-y-2 mt-4">
-                  {services.map((service, index) => (
+                  {offerings.map((offering, index) => (
                     <li key={index} className="flex items-start">
                       <svg className="w-5 h-5 text-secondary mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                       </svg>
-                      <span>{service}</span>
+                      <span>{offering}</span>
                     </li>
                   ))}
                 </ul>
