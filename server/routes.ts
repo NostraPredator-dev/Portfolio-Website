@@ -5,18 +5,24 @@ import { z } from "zod";
 import { contactRequestSchema, type ContactRequest } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  /**
+   * This is a simplified backend that mimics successful responses
+   * for frontend development. In a production app, you would have
+   * actual database operations and validations.
+   */
+
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
       // Validate the request body
       const validatedData = contactRequestSchema.parse(req.body);
       
-      // Store contact request in database
+      // Store contact request in memory
       const savedContact = await storage.saveContactRequest(validatedData);
       
-      // In a production app, we would send an email here
-      // using a service like nodemailer
+      console.log("Contact form submission:", validatedData);
       
+      // Mock successful response
       res.status(200).json({
         success: true,
         message: "Contact request received successfully",
@@ -37,6 +43,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
     }
+  });
+
+  // Generic API endpoint for any other requests
+  app.all("/api/*", (req, res) => {
+    console.log(`Mock API call to ${req.path}`, {
+      method: req.method,
+      body: req.body,
+      query: req.query
+    });
+    
+    // Return generic success response
+    res.status(200).json({
+      success: true,
+      message: "Operation successful",
+      data: {}
+    });
   });
 
   const httpServer = createServer(app);
