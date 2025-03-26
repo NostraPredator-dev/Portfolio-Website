@@ -32,7 +32,7 @@ export default function Navbar() {
       let current = "";
       
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
+        const sectionTop = (section as HTMLElement).offsetTop;
         const sectionHeight = section.clientHeight;
         
         if (window.scrollY >= sectionTop - 150) {
@@ -57,7 +57,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex justify-between items-center py-4">
           <a href="#hero" className="text-2xl font-bold font-heading">
-            <span className="text-primary">John</span>Doe
+            <span className="text-primary">Nostra</span>Predator
           </a>
           
           <div className="hidden md:flex items-center space-x-8">

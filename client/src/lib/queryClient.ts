@@ -15,15 +15,15 @@ export async function apiRequest(
 }
 
 // Mock query function for frontend-only development
-export const getQueryFn: <TData>(options: {
+export const getQueryFn = <T>(options: {
   on401: "returnNull" | "throw";
-}) => QueryFunction<TData> =
-  () =>
-  async ({ queryKey }) => {
+}): QueryFunction<T> => {
+  return async ({ queryKey }) => {
     console.log(`Mock Query: ${queryKey[0]}`);
     // Return empty data for frontend development
-    return {} as TData;
+    return {} as T;
   };
+};
 
 export const queryClient = new QueryClient({
   defaultOptions: {

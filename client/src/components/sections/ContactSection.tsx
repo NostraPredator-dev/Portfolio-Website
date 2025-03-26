@@ -89,8 +89,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <a href="mailto:john.doe@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      john.doe@example.com
+                    <a href="mailto:contact.nostrapredator@example.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      contact.nostrapredator@example.com
                     </a>
                   </div>
                 </div>
@@ -101,8 +101,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <a href="tel:+11234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                      +1 (123) 456-7890
+                    <a href="tel:+91XXXXXXXXXX" className="text-muted-foreground hover:text-primary transition-colors">
+                      +91 (XXX) XXX-XXXX
                     </a>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-medium mb-1">Location</h4>
                     <p className="text-muted-foreground">
-                      San Francisco, California
+                      India
                     </p>
                   </div>
                 </div>
