@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Button } from "../components/ui/button";
-import SocialIcons from "../components/ui/social-icons";
+import { Button } from "@/components/ui/button";
+import SocialIcons from "@/components/ui/social-icons";
 
 export default function HeroSection() {
   const containerVariants = {

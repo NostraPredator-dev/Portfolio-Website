@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "../components/ui/button";
-import SectionHeading from "../components/ui/section-heading";
-import ProjectCard from "../components/ui/project-card";
-import { Project } from "../lib/types";
+import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/ui/section-heading";
+import ProjectCard from "@/components/ui/project-card";
+import { Project } from "@/lib/types";
 
 type ProjectCategory = "all" | "web" | "game" | "mobile" | "design";
 

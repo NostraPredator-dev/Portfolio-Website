@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import SocialIcons from "../components/ui/social-icons";
+import SocialIcons from "@/components/ui/social-icons";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();

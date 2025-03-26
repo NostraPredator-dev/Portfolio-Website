@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import SectionHeading from "../components/ui/section-heading";
-import { Timeline, TimelineItem } from "../components/ui/skill-bar";
+import SectionHeading from "@/components/ui/section-heading";
+import { Timeline, TimelineItem } from "@/components/ui/skill-bar";
 
 const projects = [
   {

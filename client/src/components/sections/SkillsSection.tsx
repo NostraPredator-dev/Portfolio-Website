@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import SectionHeading from "../components/ui/section-heading";
-import { SkillBar } from "../components/ui/skill-bar";
-import { Skill } from "../lib/types";
+import SectionHeading from "@/components/ui/section-heading";
+import { SkillBar } from "@/components/ui/skill-bar";
+import { Skill } from "@/lib/types";
 
 // Define a type for skills with icons
 interface SkillWithIcon {

@@ -1,5 +1,5 @@
-import { Card, CardContent } from "../components/ui/card";
-import { Project } from "../lib/types";
+import { Card, CardContent } from "@/components/ui/card";
+import { Project } from "@/lib/types";
 
 interface ProjectCardProps {
   project: Project;
