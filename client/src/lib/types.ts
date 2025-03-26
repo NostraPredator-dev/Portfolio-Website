@@ -2,7 +2,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
-  category: "web" | "mobile" | "design";
+  category: "web" | "mobile" | "design" | "game";
   tags: string[];
   links: {
     github?: string;

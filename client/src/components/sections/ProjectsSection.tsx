@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/ui/section-heading";
 import ProjectCard from "@/components/ui/project-card";
+import { Project } from "@/lib/types";
 
 const projectCategories = [
   { id: "all", label: "All Projects" },
