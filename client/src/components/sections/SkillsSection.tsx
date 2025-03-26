@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/section-heading";
 import { SkillBar } from "@/components/ui/skill-bar";
+import { Skill } from "@/lib/types";
 
-const frontendSkills = [
+// Define a type for skills with icons
+interface SkillWithIcon {
+  name: string;
+  icon: string;
+}
+
+const frontendSkills: Skill[] = [
   { name: "JavaScript", percentage: 95 },
   { name: "HTML5 / CSS3", percentage: 92 },
   { name: "React.js", percentage: 85 },
@@ -10,7 +17,7 @@ const frontendSkills = [
   { name: "DOM Manipulation", percentage: 88 }
 ];
 
-const backendSkills = [
+const backendSkills: Skill[] = [
   { name: "Node.js", percentage: 80 },
   { name: "Python", percentage: 75 },
   { name: "RESTful APIs", percentage: 85 },
@@ -18,7 +25,7 @@ const backendSkills = [
   { name: "Express.js", percentage: 78 }
 ];
 
-const gameDevSkills = [
+const gameDevSkills: SkillWithIcon[] = [
   { name: "Game Logic", icon: "fas fa-gamepad" },
   { name: "Canvas API", icon: "fas fa-palette" },
   { name: "Animation", icon: "fas fa-film" },
@@ -27,7 +34,7 @@ const gameDevSkills = [
   { name: "Sprite Management", icon: "fas fa-images" }
 ];
 
-const otherSkills = [
+const otherSkills: SkillWithIcon[] = [
   { name: "Git / GitHub", icon: "fab fa-git-alt" },
   { name: "Mobile Development", icon: "fas fa-mobile-alt" },
   { name: "JSON / API Integration", icon: "fas fa-plug" },

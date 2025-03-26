@@ -5,14 +5,16 @@ import SectionHeading from "@/components/ui/section-heading";
 import ProjectCard from "@/components/ui/project-card";
 import { Project } from "@/lib/types";
 
+type ProjectCategory = "all" | "web" | "game" | "mobile" | "design";
+
 const projectCategories = [
-  { id: "all", label: "All Projects" },
-  { id: "web", label: "Web Apps" },
-  { id: "game", label: "Games" },
-  { id: "mobile", label: "Mobile Apps" }
+  { id: "all" as ProjectCategory, label: "All Projects" },
+  { id: "web" as ProjectCategory, label: "Web Apps" },
+  { id: "game" as ProjectCategory, label: "Games" },
+  { id: "mobile" as ProjectCategory, label: "Mobile Apps" }
 ];
 
-const projects = [
+const projects: Project[] = [
   {
     id: 1,
     title: "E-Commerce Website",
@@ -104,7 +106,7 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("all");
 
   const filteredProjects = projects.filter(project => 
     activeCategory === "all" || project.category === activeCategory
