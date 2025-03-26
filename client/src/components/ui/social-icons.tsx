@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { SOCIAL_LINKS } from "@/lib/constants";
+import { cn } from "../lib/utils";
+import { SOCIAL_LINKS } from "../lib/constants";
 
 interface SocialIconsProps {
   className?: string;

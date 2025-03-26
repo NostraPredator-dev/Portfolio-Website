@@ -1,39 +1,19 @@
-import { users, type User, type InsertUser } from "@shared/schema";
+// Frontend-only placeholder file for storage.ts
 
-// modify the interface with any CRUD methods
-// you might need
+// Import types from shared schema
+import { ContactRequest } from '../shared/schema';
 
+// Mock storage interface
 export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  // Empty interface for frontend-only mode
 }
 
+// Mock memory storage implementation
 export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  currentId: number;
-
   constructor() {
-    this.users = new Map();
-    this.currentId = 1;
-  }
-
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+    console.log("MemStorage initialized (frontend-only mode)");
   }
 }
 
+// Export storage instance
 export const storage = new MemStorage();

@@ -1,34 +1,17 @@
-import { pgTable, text, serial, integer, boolean, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
+// Frontend-only portfolio - Mock schema types for compatibility
 import { z } from "zod";
 
-// User table schema
-export const users = pgTable("users", {
-  id: serial("id").primaryKey(),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
+// Mock contact request schema (used in the Contact form)
+export const contactRequestSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  subject: z.string().min(3, { message: "Subject must be at least 3 characters" }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+  privacy: z.boolean().refine(val => val === true, { 
+    message: "You must agree to the privacy policy" 
+  })
 });
 
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
-});
-
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
-
-// Contact request table schema
-export const contactRequests = pgTable("contact_requests", {
-  id: serial("id").primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull(),
-  subject: text("subject").notNull(),
-  message: text("message").notNull(),
-  privacy: boolean("privacy").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
-});
-
-export const contactRequestSchema = createInsertSchema(contactRequests);
-
+// Type definitions
 export type ContactRequest = z.infer<typeof contactRequestSchema>;
-export type SavedContactRequest = typeof contactRequests.$inferSelect;
+export type SavedContactRequest = ContactRequest & { id: number };
