@@ -1,7 +1,7 @@
 // @ts-check
-const express = require('express');
-const nodemailer = require('nodemailer');
-const { z } = require('zod');
+import express from 'express';
+import nodemailer from 'nodemailer';
+import { z } from 'zod';
 
 // Create Express app
 const app = express();
