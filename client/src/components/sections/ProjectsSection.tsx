@@ -6,75 +6,97 @@ import ProjectCard from "@/components/ui/project-card";
 
 const projectCategories = [
   { id: "all", label: "All Projects" },
-  { id: "web", label: "Web Development" },
-  { id: "mobile", label: "Mobile Apps" },
-  { id: "design", label: "UI/UX Design" }
+  { id: "web", label: "Web Apps" },
+  { id: "game", label: "Games" },
+  { id: "mobile", label: "Mobile Apps" }
 ];
 
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce platform with admin dashboard, payment integration, and responsive design.",
+    title: "E-Commerce Website",
+    description: "A responsive e-commerce platform with product listings, cart functionality, and user authentication.",
     category: "web",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["JavaScript", "React", "Node.js"],
     links: {
-      github: "#",
+      github: "https://github.com/NostraPredator-dev/E-Commerce",
       live: "#"
     }
   },
   {
     id: 2,
-    title: "Fitness Tracker App",
-    description: "A mobile application for tracking workouts, nutrition, and health metrics with data visualization.",
+    title: "Weather App",
+    description: "An Android application that shows the weather and temperature for cities around the world.",
     category: "mobile",
-    tags: ["React Native", "Firebase", "Redux"],
+    tags: ["JavaScript", "APIs", "Mobile"],
     links: {
-      github: "#",
+      github: "https://github.com/NostraPredator-dev/Weather-App",
       live: "#"
     }
   },
   {
     id: 3,
-    title: "Finance Dashboard UI",
-    description: "A comprehensive UI/UX design for a financial management dashboard with data visualization.",
-    category: "design",
-    tags: ["Figma", "Adobe XD", "Prototyping"],
+    title: "To-Do List",
+    description: "A task management application that helps users organize and track their daily activities.",
+    category: "web",
+    tags: ["JavaScript", "HTML", "CSS"],
     links: {
-      dribbble: "#",
+      github: "https://github.com/NostraPredator-dev/To-Do-List",
       live: "#"
     }
   },
   {
     id: 4,
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates and team features.",
+    title: "Quiz Mania App",
+    description: "An interactive quiz application with multiple categories, score tracking, and timed challenges.",
     category: "web",
-    tags: ["Vue.js", "Express", "Socket.IO"],
+    tags: ["JavaScript", "React", "APIs"],
     links: {
-      github: "#",
+      github: "https://github.com/NostraPredator-dev/QuizMania-App",
       live: "#"
     }
   },
   {
     id: 5,
-    title: "Travel Companion App",
-    description: "A mobile application for travelers with itinerary planning, local recommendations, and maps.",
-    category: "mobile",
-    tags: ["Flutter", "Firebase", "Google Maps API"],
+    title: "Bunny Game",
+    description: "A 2D platformer game where players control a bunny character navigating through obstacles and collecting items.",
+    category: "game",
+    tags: ["JavaScript", "Canvas", "Game Development"],
     links: {
-      github: "#",
+      github: "https://github.com/NostraPredator-dev/Bunny-Game",
       live: "#"
     }
   },
   {
     id: 6,
-    title: "Smart Home App Design",
-    description: "A UI/UX design for a smart home control application with intuitive controls and visualizations.",
-    category: "design",
-    tags: ["Figma", "Sketch", "Interaction Design"],
+    title: "IronMan Game",
+    description: "An action game featuring Iron Man character with flying mechanics and combat abilities.",
+    category: "game",
+    tags: ["JavaScript", "Game Physics", "Animation"],
     links: {
-      dribbble: "#",
+      github: "https://github.com/NostraPredator-dev/IronMan-Game",
+      live: "#"
+    }
+  },
+  {
+    id: 7,
+    title: "Hangman Game",
+    description: "A classic word-guessing game with multiple difficulty levels and categories.",
+    category: "game",
+    tags: ["Python", "CLI", "Word Games"],
+    links: {
+      github: "https://github.com/NostraPredator-dev/Hangman-Game",
+      live: "#"
+    }
+  },
+  {
+    id: 8,
+    title: "Worm Game",
+    description: "A simple yet addictive snake-style game where the player controls a worm to collect food and grow longer.",
+    category: "game",
+    tags: ["JavaScript", "Canvas", "Game Logic"],
+    links: {
+      github: "https://github.com/NostraPredator-dev/Worm-Game",
       live: "#"
     }
   }

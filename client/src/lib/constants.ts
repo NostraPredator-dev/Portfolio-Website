@@ -1,17 +1,17 @@
-export const SITE_TITLE = "John Doe | Creative Developer";
-export const SITE_DESCRIPTION = "Professional portfolio showcasing creative work and skills";
-export const AUTHOR = "John Doe";
-export const EMAIL = "john.doe@example.com";
-export const PHONE = "+1 (123) 456-7890";
-export const LOCATION = "San Francisco, California";
+export const SITE_TITLE = "NostraPredator-dev | JavaScript Developer";
+export const SITE_DESCRIPTION = "Portfolio showcasing web and game development projects";
+export const AUTHOR = "NostraPredator-dev";
+export const EMAIL = "contact.nostrapredator@example.com";
+export const PHONE = "+91 (XXX) XXX-XXXX";
+export const LOCATION = "India";
 export const WORKING_HOURS = {
-  weekday: "Monday - Friday: 9am - 6pm",
-  weekend: "Weekend: Available for urgent matters"
+  weekday: "Monday - Friday: 10am - 7pm",
+  weekend: "Weekend: Available via email"
 };
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
-  dribbble: "https://dribbble.com"
+  github: "https://github.com/NostraPredator-dev",
+  linkedin: "https://linkedin.com/in/nostrapredator",
+  twitter: "https://twitter.com/NostraPredator",
+  dribbble: "#"
 };

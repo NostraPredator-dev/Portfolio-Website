@@ -3,37 +3,37 @@ import SectionHeading from "@/components/ui/section-heading";
 import { SkillBar } from "@/components/ui/skill-bar";
 
 const frontendSkills = [
-  { name: "React / React Native", percentage: 95 },
-  { name: "JavaScript / TypeScript", percentage: 90 },
-  { name: "HTML5 / CSS3", percentage: 95 },
-  { name: "Vue.js", percentage: 80 },
-  { name: "Redux / Context API", percentage: 85 }
+  { name: "JavaScript", percentage: 95 },
+  { name: "HTML5 / CSS3", percentage: 92 },
+  { name: "React.js", percentage: 85 },
+  { name: "Responsive Design", percentage: 90 },
+  { name: "DOM Manipulation", percentage: 88 }
 ];
 
 const backendSkills = [
-  { name: "Node.js / Express", percentage: 90 },
-  { name: "MongoDB / Mongoose", percentage: 85 },
-  { name: "SQL / PostgreSQL", percentage: 80 },
-  { name: "Python / Django", percentage: 75 },
-  { name: "RESTful API Design", percentage: 90 }
+  { name: "Node.js", percentage: 80 },
+  { name: "Python", percentage: 75 },
+  { name: "RESTful APIs", percentage: 85 },
+  { name: "MongoDB", percentage: 75 },
+  { name: "Express.js", percentage: 78 }
 ];
 
-const designSkills = [
-  { name: "Figma", icon: "fab fa-figma" },
-  { name: "Sketch", icon: "fab fa-sketch" },
-  { name: "Adobe XD", icon: "fab fa-adobe" },
-  { name: "UI Design", icon: "fas fa-pencil-ruler" },
-  { name: "UX Research", icon: "fas fa-user-friends" },
-  { name: "Prototyping", icon: "fas fa-photo-video" }
+const gameDevSkills = [
+  { name: "Game Logic", icon: "fas fa-gamepad" },
+  { name: "Canvas API", icon: "fas fa-palette" },
+  { name: "Animation", icon: "fas fa-film" },
+  { name: "Game Physics", icon: "fas fa-atom" },
+  { name: "Collision Detection", icon: "fas fa-bullseye" },
+  { name: "Sprite Management", icon: "fas fa-images" }
 ];
 
 const otherSkills = [
   { name: "Git / GitHub", icon: "fab fa-git-alt" },
-  { name: "AWS / Azure", icon: "fas fa-cloud" },
-  { name: "Docker", icon: "fas fa-docker" },
-  { name: "Responsive Design", icon: "fas fa-mobile-alt" },
-  { name: "Accessibility", icon: "fas fa-universal-access" },
-  { name: "Performance", icon: "fas fa-tachometer-alt" }
+  { name: "Mobile Development", icon: "fas fa-mobile-alt" },
+  { name: "JSON / API Integration", icon: "fas fa-plug" },
+  { name: "Code Organization", icon: "fas fa-code-branch" },
+  { name: "Problem Solving", icon: "fas fa-puzzle-piece" },
+  { name: "Web Performance", icon: "fas fa-tachometer-alt" }
 ];
 
 export default function SkillsSection() {
@@ -95,7 +95,7 @@ export default function SkillsSection() {
             </div>
           </motion.div>
           
-          {/* Design Skills */}
+          {/* Game Development Skills */}
           <motion.div 
             className="bg-card rounded-xl p-8 shadow-md"
             initial={{ opacity: 0, y: 20 }}
@@ -104,12 +104,12 @@ export default function SkillsSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-xl font-bold font-heading mb-6 flex items-center">
-              <i className="fas fa-palette text-primary mr-3"></i>
-              Design Skills
+              <i className="fas fa-gamepad text-primary mr-3"></i>
+              Game Development
             </h3>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {designSkills.map((skill, index) => (
+              {gameDevSkills.map((skill, index) => (
                 <motion.div 
                   key={index}
                   className="flex flex-col items-center p-4 bg-accent/50 rounded-lg"
