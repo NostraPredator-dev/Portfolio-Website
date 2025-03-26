@@ -1,70 +1,69 @@
-import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import express, { Request, Response, NextFunction } from "express";
+import { createServer } from "http";
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+async function main() {
+  const app = express();
+  app.use(express.json());
 
-app.use((req, res, next) => {
-  const start = Date.now();
-  const path = req.path;
-  let capturedJsonResponse: Record<string, any> | undefined = undefined;
-
-  const originalResJson = res.json;
-  res.json = function (bodyJson, ...args) {
-    capturedJsonResponse = bodyJson;
-    return originalResJson.apply(res, [bodyJson, ...args]);
-  };
-
-  res.on("finish", () => {
-    const duration = Date.now() - start;
-    if (path.startsWith("/api")) {
-      let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
-      log(logLine);
-    }
-  });
-
-  next();
-});
-
-(async () => {
-  const server = await registerRoutes(app);
-
+  // Adding general error handler
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
+    console.error("Unhandled error:", err);
+    res.status(500).json({
+      success: false,
+      message: "An unexpected error occurred",
+    });
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
-
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  // Add a redirect to the frontend dev server
+  app.get('/', (req, res) => {
+    res.send(`
+      <html>
+        <head>
+          <title>Portfolio API Server</title>
+          <style>
+            body {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+              padding: 2rem;
+              max-width: 800px;
+              margin: 0 auto;
+              line-height: 1.6;
+            }
+            h1 { color: #333; }
+            a { color: #0070f3; }
+            pre {
+              background: #f6f8fa;
+              padding: 1rem;
+              border-radius: 5px;
+              overflow: auto;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Portfolio API Server</h1>
+          <p>This is the backend server for the portfolio website. The frontend is served separately via Vite.</p>
+          <p>The contact form is handled by the standalone emailService.js server.</p>
+          <p>API Status: ✅ Running</p>
+        </body>
+      </html>
+    `);
   });
-})();
+
+  // Simple health endpoint
+  app.get('/api/health', (req, res) => {
+    res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  });
+
+  // Create HTTP server
+  const server = createServer(app);
+
+  // Start the server
+  const PORT = parseInt(process.env.PORT || "5000", 10);
+  server.listen(PORT, "0.0.0.0", () => {
+    console.log(`API server running on port ${PORT}`);
+  });
+}
+
+main().catch((err) => {
+  console.error("Fatal error during startup:", err);
+  process.exit(1);
+});

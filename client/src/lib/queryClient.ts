@@ -1,26 +1,41 @@
 import { QueryClient, QueryFunction } from "@tanstack/react-query";
 
-// Mock API functions for frontend-only development
+// Email service URL
+const EMAIL_SERVICE_URL = 'http://localhost:3001';
+
+// Real API request function
 export async function apiRequest(
   method: string,
   url: string,
   data?: unknown | undefined,
 ): Promise<Response> {
-  console.log(`Mock API Request: ${method} ${url}`, data);
-  // Create a mock Response that always succeeds
+  // For contact form, use the email service
+  if (url === '/api/contact') {
+    console.log(`API Request to email service: ${method} ${url}`, data);
+    return fetch(`${EMAIL_SERVICE_URL}/api/contact`, {
+      method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: data ? JSON.stringify(data) : undefined,
+    });
+  }
+  
+  // For other requests, use mock response (for now)
+  console.log(`API Request: ${method} ${url}`, data);
   return new Response(JSON.stringify({ success: true }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' }
   });
 }
 
-// Mock query function for frontend-only development
+// Query function for data fetching
 export const getQueryFn = <T>(options: {
   on401: "returnNull" | "throw";
 }): QueryFunction<T> => {
   return async ({ queryKey }) => {
-    console.log(`Mock Query: ${queryKey[0]}`);
-    // Return empty data for frontend development
+    console.log(`Query: ${queryKey[0]}`);
+    // Return empty data for now
     return {} as T;
   };
 };

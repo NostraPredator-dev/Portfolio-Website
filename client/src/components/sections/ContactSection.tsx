@@ -41,12 +41,16 @@ export default function ContactSection() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     
-    // Simulate form submission delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
     try {
-      // In frontend-only mode, we're just logging the form data
-      console.log("Form submitted with data:", data);
+      // Send data to our email service
+      const response = await apiRequest('POST', '/api/contact', data);
+      const result = await response.json();
+      
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Failed to send message');
+      }
+      
+      console.log("Form submitted successfully:", result);
       
       toast({
         title: "Message sent!",
@@ -56,9 +60,11 @@ export default function ContactSection() {
       
       form.reset();
     } catch (error) {
+      console.error("Error sending message:", error);
+      
       toast({
         title: "Error sending message",
-        description: "There was a problem sending your message. Please try again.",
+        description: error instanceof Error ? error.message : "There was a problem sending your message. Please try again.",
         variant: "destructive",
       });
     } finally {

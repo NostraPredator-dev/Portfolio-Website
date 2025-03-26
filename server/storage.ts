@@ -1,8 +1,6 @@
 import { users, type User, type InsertUser, type ContactRequest, type SavedContactRequest } from "@shared/schema";
 
-// modify the interface with any CRUD methods
-// you might need
-
+// Interface for storage operations
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -10,6 +8,7 @@ export interface IStorage {
   saveContactRequest(request: ContactRequest): Promise<SavedContactRequest>;
 }
 
+// In-memory storage implementation
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private contactRequests: Map<number, SavedContactRequest>;

@@ -3,30 +3,29 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
 import { contactRequestSchema, type ContactRequest } from "@shared/schema";
+import { sendContactNotification } from "./mailService";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  /**
-   * This is a simplified backend that mimics successful responses
-   * for frontend development. In a production app, you would have
-   * actual database operations and validations.
-   */
-
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
       // Validate the request body
       const validatedData = contactRequestSchema.parse(req.body);
       
-      // Store contact request in memory
+      // Store contact request in memory 
       const savedContact = await storage.saveContactRequest(validatedData);
       
-      console.log("Contact form submission:", validatedData);
+      // Send email notification
+      const emailSent = await sendContactNotification(validatedData);
       
-      // Mock successful response
+      console.log("Contact form submission:", validatedData);
+      console.log("Email notification sent:", emailSent);
+      
       res.status(200).json({
         success: true,
         message: "Contact request received successfully",
-        contactId: savedContact.id
+        contactId: savedContact.id,
+        emailSent
       });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -45,20 +44,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Generic API endpoint for any other requests
-  app.all("/api/*", (req, res) => {
-    console.log(`Mock API call to ${req.path}`, {
-      method: req.method,
-      body: req.body,
-      query: req.query
-    });
-    
-    // Return generic success response
-    res.status(200).json({
-      success: true,
-      message: "Operation successful",
-      data: {}
-    });
+  // Test email endpoint (for verifying email configuration)
+  app.get("/api/test-email", async (req, res) => {
+    try {
+      const testData: ContactRequest = {
+        name: "Test User",
+        email: "test@example.com",
+        subject: "Test Email",
+        message: "This is a test email from your portfolio contact form.",
+        privacy: true,
+      };
+      
+      const emailSent = await sendContactNotification(testData);
+      
+      res.status(200).json({
+        success: emailSent,
+        message: emailSent 
+          ? "Test email sent successfully" 
+          : "Failed to send test email. Check server logs for details."
+      });
+    } catch (error) {
+      console.error("Error sending test email:", error);
+      res.status(500).json({
+        success: false,
+        message: "An error occurred while trying to send test email"
+      });
+    }
   });
 
   const httpServer = createServer(app);

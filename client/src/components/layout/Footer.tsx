@@ -34,9 +34,6 @@ export default function Footer() {
             >
               <span className="text-primary">Hardik </span>Chudasama
             </a>
-            <p className="text-sm text-muted-foreground mt-2">
-              Creating digital experiences that matter.
-            </p>
           </div>
           
           <div className="flex flex-wrap justify-center space-x-6">

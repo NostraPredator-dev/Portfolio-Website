@@ -45,7 +45,7 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight"
               >
-                I create <span className="text-primary">digital</span> experiences that <span className="text-secondary">matter</span>
+                I create <span className="text-primary">digital</span> experiences that <span className="text-primary">matter</span>
               </motion.h1>
               
               <motion.p 

@@ -20,14 +20,14 @@ const projects = [
 const education = [
   {
     title: "Computer Science",
-    institution: "Self-study & Online Learning",
-    period: "2021 - Present",
+    institution: "Kalinga Institute of Industrial Technology (KIIT)",
+    period: "2022 - Present",
     current: true
   },
   {
-    title: "Programming Bootcamp",
-    institution: "Online Platform",
-    period: "2021",
+    title: "Higher Secondary",
+    institution: "De-Nobili School (ISC)",
+    period: "2019-2021",
     current: false
   }
 ];
@@ -57,10 +57,10 @@ export default function AboutSection() {
             <div className="sticky top-32">
               <SectionHeading title="About" highlight="Me" alignment="left" />
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                I'm a passionate self-taught developer with a strong interest in game development and web technologies. I enjoy creating interactive experiences that are both fun and functional.
+                I'm a passionate self-taught developer and a 3rd-year CSE student at KIIT with expertise in full-stack development. I have a strong interest in game development and web technologies, particularly React. I enjoy creating interactive experiences that are both fun and functional, always looking for new ways to enhance user engagement.
               </p>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Currently focusing on JavaScript and Python programming, I'm dedicated to expanding my skills through hands-on projects and continuous learning. I love solving problems and bringing creative ideas to life through code.
+                Currently, I'm focusing on JavaScript and Python while expanding my skills through hands-on projects and competitive coding. I love solving complex problems and bringing creative ideas to life through code, constantly pushing myself to learn and improve.
               </p>
               <a href="#" className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
                 Download Resume
@@ -103,7 +103,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i className="fas fa-graduation-cap text-secondary text-xl"></i>
+                  <i className="fas fa-graduation-cap text-primary text-xl"></i>
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2">Education</h3>
                 <div className="space-y-4 mt-4">
@@ -145,7 +145,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <i className="fas fa-cog text-secondary text-xl"></i>
+                  <i className="fas fa-cog text-primary text-xl"></i>
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-2">Skills Focus</h3>
                 <ul className="space-y-2 mt-4">
