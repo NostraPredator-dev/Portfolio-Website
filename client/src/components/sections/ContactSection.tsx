@@ -41,8 +41,12 @@ export default function ContactSection() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     
+    // Simulate form submission delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     try {
-      await apiRequest("POST", "/api/contact", data);
+      // In frontend-only mode, we're just logging the form data
+      console.log("Form submitted with data:", data);
       
       toast({
         title: "Message sent!",
