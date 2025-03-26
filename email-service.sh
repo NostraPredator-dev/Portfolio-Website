@@ -1,2 +1,3 @@
+
 #!/bin/bash
-node emailService.js
+node --experimental-json-modules emailService.js

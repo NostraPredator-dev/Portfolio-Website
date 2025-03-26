@@ -1,4 +1,4 @@
-// @ts-check
+
 import express from 'express';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
