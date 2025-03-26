@@ -95,9 +95,7 @@ export default function Navbar() {
             ))}
           </div>
           
-          <div className="flex items-center space-x-4">
-            <ThemeToggle />
-            
+          <div className="flex items-center">
             <button 
               className="md:hidden p-2 rounded-md text-foreground/80 hover:bg-accent transition-colors"
               onClick={toggleMenu}

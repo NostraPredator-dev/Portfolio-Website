@@ -32,28 +32,6 @@
   --radius: 0.5rem;
 }
 
-.dark {
-  --background: 162 30% 15%;
-  --foreground: 0 0% 100%;
-  --card: 162 30% 15%;
-  --card-foreground: 0 0% 100%;
-  --popover: 162 98% 10%;
-  --popover-foreground: 0 0% 100%;
-  --primary: 162 98% 26%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 247 99% 80%;
-  --secondary-foreground: 0 0% 0%;
-  --muted: 162 98% 15%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 162 98% 15%;
-  --accent-foreground: 0 0% 100%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 162 98% 15%;
-  --input: 162 98% 15%;
-  --ring: 162 98% 26%;
-}
-
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
